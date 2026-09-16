@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.sf</groupId>
+    <artifactId>self-framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>self-framework-web</module>
+        <module>self-framework-model</module>
+        <module>self-framework-service</module>
+        <module>self-framework-dao</module>
+        <module>self-framework-util</module>
+        <module>self-framework-common</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.32</lombok.version>
+        <guava.version>31.1-jre</guava.version>
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <commons-collections.version>4.4</commons-collections.version>
+        <mybatis-plus.version>3.5.15</mybatis-plus.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <self.version>1.0-SNAPSHOT</self.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot4-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-model</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-util</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-common</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-dao</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-service</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sf</groupId>
+                <artifactId>self-framework-web</artifactId>
+                <version>${self.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
