@@ -124,6 +124,12 @@ public class StreamUtil {
         return collection.stream().map(keyFunction).toList();
     }
 
+    public static <E, T> List<T> map2(Collection<E> collection, Function<E, T> keyFunction) {
+        Objects.requireNonNull(collection);
+        Objects.requireNonNull(keyFunction);
+        return collection.stream().map(keyFunction).collect(Collectors.toCollection(ArrayList::new));
+    }
+
     public static <E, T> List<T> map(Collection<E> collection, Predicate<E> filter ,Function<E, T> etFunction) {
         Objects.requireNonNull(collection);
         Objects.requireNonNull(etFunction);
